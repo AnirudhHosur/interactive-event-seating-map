@@ -1,0 +1,5 @@
+<svg width="400" height="200" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="200" fill="#2c3e50"/>
+  <text x="200" y="100" text-anchor="middle" fill="white" font-size="24" font-family="Arial, sans-serif">Metropolis Arena</text>
+  <text x="200" y="130" text-anchor="middle" fill="#bdc3c7" font-size="16" font-family="Arial, sans-serif">Indoor Arena</text>
+</svg>

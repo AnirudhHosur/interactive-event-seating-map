@@ -1,0 +1,5 @@
+<svg width="400" height="200" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="200" fill="#e74c3c"/>
+  <text x="200" y="100" text-anchor="middle" fill="white" font-size="24" font-family="Arial, sans-serif">The Grand Hall</text>
+  <text x="200" y="130" text-anchor="middle" fill="#fadbd8" font-size="16" font-family="Arial, sans-serif">Concert Hall</text>
+</svg>

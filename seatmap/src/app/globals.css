@@ -1,0 +1,14 @@
+html, body, #__next {
+  height: 100%;
+}
+
+:root {
+  --focus-ring: 2px solid #1976d2;
+}
+
+* :focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: 2px;
+}
+
+svg { touch-action: none; } /* enables proper pinch-zoom with d3-zoom */

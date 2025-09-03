@@ -1,0 +1,467 @@
+[
+    {
+        "venueId": "arena-01",
+        "name": "Metropolis Arena",
+        "description": "Modern indoor arena with premium seating and excellent acoustics",
+        "capacity": 2500,
+        "location": "Downtown Metropolis",
+        "image": "/arena-01.svg",
+        "map": {
+            "width": 1200,
+            "height": 900
+        },
+        "sections": [
+            {
+                "id": "STAGE",
+                "label": "STAGE",
+                "type": "stage",
+                "transform": {
+                    "x": 400,
+                    "y": 50,
+                    "scale": 1
+                },
+                "width": 400,
+                "height": 60,
+                "color": "#2c3e50"
+            },
+            {
+                "id": "A",
+                "label": "Lower Bowl A",
+                "type": "seating",
+                "transform": {
+                    "x": 100,
+                    "y": 200,
+                    "scale": 1
+                },
+                "rows": [
+                    {
+                        "index": 1,
+                        "seats": [
+                            {
+                                "id": "A-1-01",
+                                "col": 1,
+                                "x": 150,
+                                "y": 240,
+                                "priceTier": 1,
+                                "status": "available"
+                            },
+                            {
+                                "id": "A-1-02",
+                                "col": 2,
+                                "x": 180,
+                                "y": 240,
+                                "priceTier": 1,
+                                "status": "available"
+                            },
+                            {
+                                "id": "A-1-03",
+                                "col": 3,
+                                "x": 210,
+                                "y": 240,
+                                "priceTier": 1,
+                                "status": "available"
+                            },
+                            {
+                                "id": "A-1-04",
+                                "col": 4,
+                                "x": 240,
+                                "y": 240,
+                                "priceTier": 1,
+                                "status": "reserved"
+                            },
+                            {
+                                "id": "A-1-05",
+                                "col": 5,
+                                "x": 270,
+                                "y": 240,
+                                "priceTier": 1,
+                                "status": "available"
+                            }
+                        ]
+                    },
+                    {
+                        "index": 2,
+                        "seats": [
+                            {
+                                "id": "A-2-01",
+                                "col": 1,
+                                "x": 150,
+                                "y": 280,
+                                "priceTier": 2,
+                                "status": "available"
+                            },
+                            {
+                                "id": "A-2-02",
+                                "col": 2,
+                                "x": 180,
+                                "y": 280,
+                                "priceTier": 2,
+                                "status": "available"
+                            },
+                            {
+                                "id": "A-2-03",
+                                "col": 3,
+                                "x": 210,
+                                "y": 280,
+                                "priceTier": 2,
+                                "status": "held"
+                            },
+                            {
+                                "id": "A-2-04",
+                                "col": 4,
+                                "x": 240,
+                                "y": 280,
+                                "priceTier": 2,
+                                "status": "available"
+                            },
+                            {
+                                "id": "A-2-05",
+                                "col": 5,
+                                "x": 270,
+                                "y": 280,
+                                "priceTier": 2,
+                                "status": "available"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "B",
+                "label": "Lower Bowl B",
+                "type": "seating",
+                "transform": {
+                    "x": 700,
+                    "y": 200,
+                    "scale": 1
+                },
+                "rows": [
+                    {
+                        "index": 1,
+                        "seats": [
+                            {
+                                "id": "B-1-01",
+                                "col": 1,
+                                "x": 750,
+                                "y": 240,
+                                "priceTier": 2,
+                                "status": "available"
+                            },
+                            {
+                                "id": "B-1-02",
+                                "col": 2,
+                                "x": 780,
+                                "y": 240,
+                                "priceTier": 2,
+                                "status": "available"
+                            },
+                            {
+                                "id": "B-1-03",
+                                "col": 3,
+                                "x": 810,
+                                "y": 240,
+                                "priceTier": 2,
+                                "status": "available"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "venueId": "arena-02",
+        "name": "Starlight Stadium",
+        "description": "Outdoor stadium with panoramic city views and luxury suites",
+        "capacity": 4500,
+        "location": "Riverside District",
+        "image": "/arena-02.svg",
+        "map": {
+            "width": 1400,
+            "height": 1000
+        },
+        "sections": [
+            {
+                "id": "STAGE",
+                "label": "STAGE",
+                "type": "stage",
+                "transform": {
+                    "x": 500,
+                    "y": 100,
+                    "scale": 1
+                },
+                "width": 400,
+                "height": 80,
+                "color": "#8e44ad"
+            },
+            {
+                "id": "VIP",
+                "label": "VIP Suites",
+                "type": "seating",
+                "transform": {
+                    "x": 200,
+                    "y": 250,
+                    "scale": 1
+                },
+                "rows": [
+                    {
+                        "index": 1,
+                        "seats": [
+                            {
+                                "id": "VIP-1-01",
+                                "col": 1,
+                                "x": 250,
+                                "y": 290,
+                                "priceTier": 1,
+                                "status": "available"
+                            },
+                            {
+                                "id": "VIP-1-02",
+                                "col": 2,
+                                "x": 280,
+                                "y": 290,
+                                "priceTier": 1,
+                                "status": "available"
+                            },
+                            {
+                                "id": "VIP-1-03",
+                                "col": 3,
+                                "x": 310,
+                                "y": 290,
+                                "priceTier": 1,
+                                "status": "reserved"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "MAIN",
+                "label": "Main Stand",
+                "type": "seating",
+                "transform": {
+                    "x": 400,
+                    "y": 400,
+                    "scale": 1
+                },
+                "rows": [
+                    {
+                        "index": 1,
+                        "seats": [
+                            {
+                                "id": "MAIN-1-01",
+                                "col": 1,
+                                "x": 450,
+                                "y": 440,
+                                "priceTier": 2,
+                                "status": "available"
+                            },
+                            {
+                                "id": "MAIN-1-02",
+                                "col": 2,
+                                "x": 480,
+                                "y": 440,
+                                "priceTier": 2,
+                                "status": "available"
+                            },
+                            {
+                                "id": "MAIN-1-03",
+                                "col": 3,
+                                "x": 510,
+                                "y": 440,
+                                "priceTier": 2,
+                                "status": "available"
+                            },
+                            {
+                                "id": "MAIN-1-04",
+                                "col": 4,
+                                "x": 540,
+                                "y": 440,
+                                "priceTier": 2,
+                                "status": "available"
+                            },
+                            {
+                                "id": "MAIN-1-05",
+                                "col": 5,
+                                "x": 570,
+                                "y": 440,
+                                "priceTier": 2,
+                                "status": "available"
+                            }
+                        ]
+                    },
+                    {
+                        "index": 2,
+                        "seats": [
+                            {
+                                "id": "MAIN-2-01",
+                                "col": 1,
+                                "x": 450,
+                                "y": 480,
+                                "priceTier": 3,
+                                "status": "available"
+                            },
+                            {
+                                "id": "MAIN-2-02",
+                                "col": 2,
+                                "x": 480,
+                                "y": 480,
+                                "priceTier": 3,
+                                "status": "available"
+                            },
+                            {
+                                "id": "MAIN-2-03",
+                                "col": 3,
+                                "x": 510,
+                                "y": 480,
+                                "priceTier": 3,
+                                "status": "available"
+                            },
+                            {
+                                "id": "MAIN-2-04",
+                                "col": 4,
+                                "x": 540,
+                                "y": 480,
+                                "priceTier": 3,
+                                "status": "available"
+                            },
+                            {
+                                "id": "MAIN-2-05",
+                                "col": 5,
+                                "x": 570,
+                                "y": 480,
+                                "priceTier": 3,
+                                "status": "available"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "venueId": "arena-03",
+        "name": "The Grand Hall",
+        "description": "Intimate concert hall with perfect acoustics and elegant architecture",
+        "capacity": 1200,
+        "location": "Cultural Quarter",
+        "image": "/arena-03.svg",
+        "map": {
+            "width": 1000,
+            "height": 800
+        },
+        "sections": [
+            {
+                "id": "STAGE",
+                "label": "STAGE",
+                "type": "stage",
+                "transform": {
+                    "x": 300,
+                    "y": 80,
+                    "scale": 1
+                },
+                "width": 400,
+                "height": 60,
+                "color": "#e74c3c"
+            },
+            {
+                "id": "ORCHESTRA",
+                "label": "Orchestra",
+                "type": "seating",
+                "transform": {
+                    "x": 200,
+                    "y": 200,
+                    "scale": 1
+                },
+                "rows": [
+                    {
+                        "index": 1,
+                        "seats": [
+                            {
+                                "id": "ORCH-1-01",
+                                "col": 1,
+                                "x": 250,
+                                "y": 240,
+                                "priceTier": 1,
+                                "status": "available"
+                            },
+                            {
+                                "id": "ORCH-1-02",
+                                "col": 2,
+                                "x": 280,
+                                "y": 240,
+                                "priceTier": 1,
+                                "status": "available"
+                            },
+                            {
+                                "id": "ORCH-1-03",
+                                "col": 3,
+                                "x": 310,
+                                "y": 240,
+                                "priceTier": 1,
+                                "status": "available"
+                            },
+                            {
+                                "id": "ORCH-1-04",
+                                "col": 4,
+                                "x": 340,
+                                "y": 240,
+                                "priceTier": 1,
+                                "status": "available"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "BALCONY",
+                "label": "Balcony",
+                "type": "seating",
+                "transform": {
+                    "x": 150,
+                    "y": 350,
+                    "scale": 0.9
+                },
+                "rows": [
+                    {
+                        "index": 1,
+                        "seats": [
+                            {
+                                "id": "BALC-1-01",
+                                "col": 1,
+                                "x": 200,
+                                "y": 390,
+                                "priceTier": 2,
+                                "status": "available"
+                            },
+                            {
+                                "id": "BALC-1-02",
+                                "col": 2,
+                                "x": 230,
+                                "y": 390,
+                                "priceTier": 2,
+                                "status": "available"
+                            },
+                            {
+                                "id": "BALC-1-03",
+                                "col": 3,
+                                "x": 260,
+                                "y": 390,
+                                "priceTier": 2,
+                                "status": "available"
+                            },
+                            {
+                                "id": "BALC-1-04",
+                                "col": 4,
+                                "x": 290,
+                                "y": 390,
+                                "priceTier": 2,
+                                "status": "available"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]
