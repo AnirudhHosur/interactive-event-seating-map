@@ -30,13 +30,29 @@ export default function ArenaCard({ venueId, name, description, capacity, locati
             sx={{ 
                 maxWidth: 345, 
                 cursor: 'pointer',
-                transition: 'transform 0.2s, box-shadow 0.2s',
+                backgroundColor: 'var(--background-secondary)',
+                border: '1px solid var(--border-primary)',
+                transition: 'all 0.2s ease',
                 '&:hover': {
                     transform: 'translateY(-4px)',
-                    boxShadow: 8,
+                    boxShadow: '0 8px 25px var(--shadow)',
+                    borderColor: 'var(--border-secondary)',
+                },
+                '&:focus-visible': {
+                    outline: 'var(--focus-ring)',
+                    outlineOffset: '2px',
                 }
             }}
             onClick={handleClick}
+            onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    handleClick();
+                }
+            }}
+            tabIndex={0}
+            role="button"
+            aria-label={`View details for ${name} venue`}
         >
             <CardMedia
                 component="img"
@@ -45,14 +61,29 @@ export default function ArenaCard({ venueId, name, description, capacity, locati
                 alt={name}
                 sx={{ 
                     objectFit: 'cover',
-                    backgroundColor: '#f5f5f5'
+                    backgroundColor: 'var(--background-tertiary)'
                 }}
             />
             <CardContent>
-                <Typography gutterBottom variant="h5" component="div" sx={{ fontWeight: 'bold' }}>
+                <Typography 
+                    gutterBottom 
+                    variant="h5" 
+                    component="div" 
+                    sx={{ 
+                        fontWeight: 'bold',
+                        color: 'var(--text-primary)',
+                    }}
+                >
                     {name}
                 </Typography>
-                <Typography variant="body2" color="text.secondary" sx={{ mb: 2, minHeight: 60 }}>
+                <Typography 
+                    variant="body2" 
+                    sx={{ 
+                        mb: 2, 
+                        minHeight: 60,
+                        color: 'var(--text-secondary)',
+                    }}
+                >
                     {description}
                 </Typography>
                 <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}>
@@ -61,12 +92,28 @@ export default function ArenaCard({ venueId, name, description, capacity, locati
                         size="small" 
                         color="primary" 
                         variant="outlined"
+                        sx={{
+                            borderColor: 'var(--accent-primary)',
+                            color: 'var(--accent-primary)',
+                            '&:hover': {
+                                backgroundColor: 'var(--accent-primary)',
+                                color: 'var(--background-primary)',
+                            }
+                        }}
                     />
                     <Chip 
                         label={location} 
                         size="small" 
                         color="secondary" 
                         variant="outlined"
+                        sx={{
+                            borderColor: 'var(--text-secondary)',
+                            color: 'var(--text-secondary)',
+                            '&:hover': {
+                                backgroundColor: 'var(--text-secondary)',
+                                color: 'var(--background-primary)',
+                            }
+                        }}
                     />
                 </Box>
             </CardContent>

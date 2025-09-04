@@ -45,7 +45,7 @@ export default function ArenaList() {
     if (loading) {
         return (
             <Box display="grid" alignItems="center" justifyContent="center" minHeight={400}>
-                <CircularProgress />
+                <CircularProgress sx={{ color: 'var(--accent-primary)' }} />
             </Box>
         );
     }
@@ -53,10 +53,24 @@ export default function ArenaList() {
     return (
         <Box>
             <Box sx={{ mb: 4, textAlign: 'center' }}>
-                <Typography variant="h3" component="h1" gutterBottom sx={{ fontWeight: 'bold' }}>
+                <Typography 
+                    variant="h3" 
+                    component="h1" 
+                    gutterBottom 
+                    sx={{ 
+                        fontWeight: 'bold',
+                        color: 'var(--text-primary)',
+                    }}
+                >
                     Choose Your Venue
                 </Typography>
-                <Typography variant="h6" color="text.secondary" sx={{ mb: 3 }}>
+                <Typography 
+                    variant="h6" 
+                    sx={{ 
+                        mb: 3,
+                        color: 'var(--text-secondary)',
+                    }}
+                >
                     Select from our premium selection of venues and start your booking experience
                 </Typography>
                 <TextField
@@ -64,7 +78,29 @@ export default function ArenaList() {
                     placeholder="Search arenas by name, location, or description..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    sx={{ maxWidth: 600 }}
+                    sx={{ 
+                        maxWidth: 600,
+                        '& .MuiOutlinedInput-root': {
+                            backgroundColor: 'var(--background-secondary)',
+                            color: 'var(--text-primary)',
+                            '& fieldset': {
+                                borderColor: 'var(--border-primary)',
+                            },
+                            '&:hover fieldset': {
+                                borderColor: 'var(--border-secondary)',
+                            },
+                            '&.Mui-focused fieldset': {
+                                borderColor: 'var(--accent-primary)',
+                            },
+                        },
+                        '& .MuiInputBase-input': {
+                            color: 'var(--text-primary)',
+                        },
+                        '& .MuiInputBase-input::placeholder': {
+                            color: 'var(--text-tertiary)',
+                            opacity: 1,
+                        },
+                    }}
                     InputProps={{
                         startAdornment: (
                             <InputAdornment position="start">
@@ -77,7 +113,12 @@ export default function ArenaList() {
 
             {filteredArenas.length === 0 ? (
                 <Box textAlign="center" py={4}>
-                    <Typography variant="h6" color="text.secondary">
+                    <Typography 
+                        variant="h6" 
+                        sx={{
+                            color: 'var(--text-secondary)',
+                        }}
+                    >
                         No arenas found matching "{searchTerm}"
                     </Typography>
                 </Box>

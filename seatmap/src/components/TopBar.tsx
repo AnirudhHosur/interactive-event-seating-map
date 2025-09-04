@@ -9,6 +9,7 @@ import Switch from "@mui/material/Switch";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Box from "@mui/material/Box";
 import { useRouter } from "next/navigation";
+import ThemeToggle from "./ThemeToggle";
 
 interface TopBarProps {
     title: string;
@@ -36,7 +37,15 @@ export default function TopBar({
     };
 
     return (
-        <AppBar position="sticky" elevation={1}>
+        <AppBar 
+            position="sticky" 
+            elevation={1}
+            sx={{
+                backgroundColor: 'var(--background-secondary)',
+                color: 'var(--text-primary)',
+                borderBottom: '1px solid var(--border-primary)',
+            }}
+        >
             <Toolbar>
                 {showHomeButton && (
                     <IconButton
@@ -44,37 +53,60 @@ export default function TopBar({
                         color="inherit"
                         aria-label="home"
                         onClick={handleHomeClick}
-                        sx={{ mr: 2 }}
+                        sx={{ 
+                            mr: 2,
+                            color: 'var(--text-primary)',
+                            '&:hover': {
+                                backgroundColor: 'var(--background-tertiary)',
+                            }
+                        }}
                     >
                         <HomeIcon />
                     </IconButton>
                 )}
-                <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+                <Typography 
+                    variant="h6" 
+                    component="div" 
+                    sx={{ 
+                        flexGrow: 1,
+                        color: 'var(--text-primary)',
+                    }}
+                >
                     {title}
                 </Typography>
-                {showHeatMapToggle && (
-                    <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                
+                <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+                    {showHeatMapToggle && (
                         <FormControlLabel
                             control={
                                 <Switch
                                     checked={heatMapEnabled}
                                     onChange={handleHeatMapToggle}
-                                    color="secondary"
+                                    color="primary"
                                     size="small"
+                                    sx={{
+                                        '& .MuiSwitch-switchBase.Mui-checked': {
+                                            color: 'var(--accent-primary)',
+                                        },
+                                        '& .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track': {
+                                            backgroundColor: 'var(--accent-primary)',
+                                        },
+                                    }}
                                 />
                             }
                             label="Heat Map"
                             labelPlacement="start"
                             sx={{ 
-                                color: 'white',
+                                color: 'var(--text-primary)',
                                 '& .MuiFormControlLabel-label': {
-                                    color: 'white',
+                                    color: 'var(--text-primary)',
                                     fontSize: '0.875rem'
                                 }
                             }}
                         />
-                    </Box>
-                )}
+                    )}
+                    <ThemeToggle />
+                </Box>
             </Toolbar>
         </AppBar>
     );

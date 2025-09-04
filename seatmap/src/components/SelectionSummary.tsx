@@ -24,26 +24,68 @@ export default function SelectionSummary({ byId }: { byId: Map<string, FlatSeat>
     const total = subtotal(byId);
 
     return (
-        <Card variant="outlined">
+        <Card 
+            variant="outlined"
+            sx={{
+                backgroundColor: 'var(--background-secondary)',
+                borderColor: 'var(--border-primary)',
+            }}
+        >
             <CardContent>
-                <Typography variant="subtitle1">Your selection ({items.length}/8)</Typography>
+                <Typography 
+                    variant="subtitle1"
+                    sx={{ color: 'var(--text-primary)' }}
+                >
+                    Your selection ({items.length}/8)
+                </Typography>
                 <Stack direction="row" spacing={1} useFlexGap flexWrap="wrap" sx={{ my: 1 }}>
                     {items.length === 0 ? (
-                        <Typography variant="body2" color="text.secondary">No seats selected yet.</Typography>
+                        <Typography 
+                            variant="body2" 
+                            sx={{ color: 'var(--text-secondary)' }}
+                        >
+                            No seats selected yet.
+                        </Typography>
                     ) : (
                         items.map((s) => (
                             <Chip
                                 key={s.id}
                                 label={`${s.sectionId}-${s.rowIndex}-${s.col} • ${currency(priceForTier(s.priceTier))}`}
                                 size="small"
+                                sx={{
+                                    backgroundColor: 'var(--background-tertiary)',
+                                    color: 'var(--text-primary)',
+                                    border: '1px solid var(--border-primary)',
+                                }}
                             />
                         ))
                     )}
                 </Stack>
-                <Divider sx={{ my: 1 }} />
+                <Divider sx={{ my: 1, borderColor: 'var(--border-primary)' }} />
                 <Stack direction="row" justifyContent="space-between" alignItems="center">
-                    <Typography variant="h6">Subtotal: {currency(total)}</Typography>
-                    <Button variant="outlined" onClick={clear} disabled={items.length === 0}>
+                    <Typography 
+                        variant="h6"
+                        sx={{ color: 'var(--text-primary)' }}
+                    >
+                        Subtotal: {currency(total)}
+                    </Typography>
+                    <Button 
+                        variant="outlined" 
+                        onClick={clear} 
+                        disabled={items.length === 0}
+                        sx={{
+                            borderColor: 'var(--border-primary)',
+                            color: 'var(--text-primary)',
+                            '&:hover': {
+                                borderColor: 'var(--border-secondary)',
+                                backgroundColor: 'var(--background-tertiary)',
+                            },
+                            '&:disabled': {
+                                borderColor: 'var(--border-primary)',
+                                color: 'var(--text-tertiary)',
+                            }
+                        }}
+                    >
                         Clear
                     </Button>
                 </Stack>

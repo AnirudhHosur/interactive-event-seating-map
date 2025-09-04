@@ -3,12 +3,60 @@ html, body, #__next {
 }
 
 :root {
+  /* Light theme colors - WCAG 2.1 AA compliant */
+  --background-primary: #ffffff;
+  --background-secondary: #f8f9fa;
+  --background-tertiary: #e9ecef;
+  --text-primary: #212529;
+  --text-secondary: #495057;
+  --text-tertiary: #6c757d;
+  --accent-primary: #1976d2;
+  --accent-secondary: #42a5f5;
+  --border-primary: #dee2e6;
+  --border-secondary: #adb5bd;
   --focus-ring: 2px solid #1976d2;
+  --shadow: rgba(0, 0, 0, 0.1);
+  --success: #28a745;
+  --warning: #ffc107;
+  --error: #dc3545;
 }
 
+[data-theme="dark"] {
+  /* Dark theme colors - WCAG 2.1 AA compliant */
+  --background-primary: #121212;
+  --background-secondary: #1e1e1e;
+  --background-tertiary: #2d2d2d;
+  --text-primary: #ffffff;
+  --text-secondary: #e9ecef;
+  --text-tertiary: #adb5bd;
+  --accent-primary: #90caf9;
+  --accent-secondary: #42a5f5;
+  --border-primary: #424242;
+  --border-secondary: #616161;
+  --focus-ring: 2px solid #90caf9;
+  --shadow: rgba(0, 0, 0, 0.3);
+  --success: #4caf50;
+  --warning: #ff9800;
+  --error: #f44336;
+}
+
+/* Apply theme colors to body */
+body {
+  background-color: var(--background-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Focus styles */
 * :focus-visible {
   outline: var(--focus-ring);
   outline-offset: 2px;
 }
 
-svg { touch-action: none; } /* enables proper pinch-zoom with d3-zoom */
+/* SVG touch handling */
+svg { touch-action: none; }
+
+/* Theme transition for all elements */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}

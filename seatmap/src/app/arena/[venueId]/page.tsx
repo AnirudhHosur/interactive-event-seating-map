@@ -66,13 +66,28 @@ export default function ArenaPage({ params }: PageProps) {
                 heatMapEnabled={heatMapEnabled}
                 onHeatMapToggle={setHeatMapEnabled}
             />
-            <Container maxWidth="lg" sx={{ py: 2 }}>
+            <Container 
+                maxWidth="lg" 
+                sx={{ 
+                    py: 2,
+                    backgroundColor: 'var(--background-primary)',
+                    minHeight: 'calc(100vh - 64px)',
+                }}
+            >
                 <Box sx={{ mb: 2 }}>
                     <Button
                         startIcon={<ArrowBackIcon />}
                         onClick={handleBack}
                         variant="outlined"
                         size="small"
+                        sx={{
+                            borderColor: 'var(--border-primary)',
+                            color: 'var(--text-primary)',
+                            '&:hover': {
+                                borderColor: 'var(--border-secondary)',
+                                backgroundColor: 'var(--background-secondary)',
+                            }
+                        }}
                     >
                         Back to Venues
                     </Button>
@@ -83,12 +98,19 @@ export default function ArenaPage({ params }: PageProps) {
                     <Box sx={{ 
                         mb: 2, 
                         p: 2, 
-                        bgcolor: 'background.paper', 
+                        backgroundColor: 'var(--background-secondary)', 
                         borderRadius: 1,
                         border: '1px solid',
-                        borderColor: 'divider'
+                        borderColor: 'var(--border-primary)'
                     }}>
-                        <Typography variant="subtitle2" sx={{ mb: 1, fontWeight: 'bold' }}>
+                        <Typography 
+                            variant="subtitle2" 
+                            sx={{ 
+                                mb: 1, 
+                                fontWeight: 'bold',
+                                color: 'var(--text-primary)',
+                            }}
+                        >
                             Price Tier Legend:
                         </Typography>
                         <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap' }}>
@@ -99,7 +121,12 @@ export default function ArenaPage({ params }: PageProps) {
                                     bgcolor: '#d32f2f', 
                                     borderRadius: '50%' 
                                 }} />
-                                <Typography variant="body2">Tier 1: Premium ($150)</Typography>
+                                <Typography 
+                                    variant="body2"
+                                    sx={{ color: 'var(--text-secondary)' }}
+                                >
+                                    Tier 1: Premium ($150)
+                                </Typography>
                             </Box>
                             <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                                 <Box sx={{ 
@@ -108,7 +135,12 @@ export default function ArenaPage({ params }: PageProps) {
                                     bgcolor: '#f57c00', 
                                     borderRadius: '50%' 
                                 }} />
-                                <Typography variant="body2">Tier 2: Standard ($110)</Typography>
+                                <Typography 
+                                    variant="body2"
+                                    sx={{ color: 'var(--text-secondary)' }}
+                                >
+                                    Tier 2: Standard ($110)
+                                </Typography>
                             </Box>
                             <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                                 <Box sx={{ 
@@ -117,7 +149,12 @@ export default function ArenaPage({ params }: PageProps) {
                                     bgcolor: '#fbc02d', 
                                     borderRadius: '50%' 
                                 }} />
-                                <Typography variant="body2">Tier 3: Economy ($80)</Typography>
+                                <Typography 
+                                    variant="body2"
+                                    sx={{ color: 'var(--text-secondary)' }}
+                                >
+                                    Tier 3: Economy ($80)
+                                </Typography>
                             </Box>
                             <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                                 <Box sx={{ 
@@ -126,7 +163,12 @@ export default function ArenaPage({ params }: PageProps) {
                                     bgcolor: '#388e3c', 
                                     borderRadius: '50%' 
                                 }} />
-                                <Typography variant="body2">Tier 4: Budget ($55)</Typography>
+                                <Typography 
+                                    variant="body2"
+                                    sx={{ color: 'var(--text-secondary)' }}
+                                >
+                                    Tier 4: Budget ($55)
+                                </Typography>
                             </Box>
                         </Box>
                     </Box>

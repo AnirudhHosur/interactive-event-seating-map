@@ -15,25 +15,62 @@ export default function SeatDetails({ byId }: { byId: Map<string, FlatSeat> }) {
 
     if (!seat) {
         return (
-            <Card variant="outlined">
+            <Card 
+                variant="outlined"
+                sx={{
+                    backgroundColor: 'var(--background-secondary)',
+                    borderColor: 'var(--border-primary)',
+                }}
+            >
                 <CardContent>
-                    <Typography variant="subtitle1">Seat details</Typography>
-                    <Typography variant="body2" color="text.secondary">Focus or click a seat to see details.</Typography>
+                    <Typography 
+                        variant="subtitle1"
+                        sx={{ color: 'var(--text-primary)' }}
+                    >
+                        Seat details
+                    </Typography>
+                    <Typography 
+                        variant="body2" 
+                        sx={{ color: 'var(--text-secondary)' }}
+                    >
+                        Focus or click a seat to see details.
+                    </Typography>
                 </CardContent>
             </Card>
         );
     }
 
     return (
-        <Card variant="outlined">
+        <Card 
+            variant="outlined"
+            sx={{
+                backgroundColor: 'var(--background-secondary)',
+                borderColor: 'var(--border-primary)',
+            }}
+        >
             <CardContent>
-                <Typography variant="subtitle1">Seat details</Typography>
-                <Divider sx={{ my: 1 }} />
-                <Typography>Section: <b>{seat.sectionLabel}</b></Typography>
-                <Typography>Row: <b>{seat.rowIndex}</b></Typography>
-                <Typography>Seat: <b>{seat.col}</b></Typography>
-                <Typography>Status: <b>{seat.status}</b></Typography>
-                <Typography>Price: <b>{currency(priceForTier(seat.priceTier))}</b></Typography>
+                <Typography 
+                    variant="subtitle1"
+                    sx={{ color: 'var(--text-primary)' }}
+                >
+                    Seat details
+                </Typography>
+                <Divider sx={{ my: 1, borderColor: 'var(--border-primary)' }} />
+                <Typography sx={{ color: 'var(--text-primary)' }}>
+                    Section: <b>{seat.sectionLabel}</b>
+                </Typography>
+                <Typography sx={{ color: 'var(--text-primary)' }}>
+                    Row: <b>{seat.rowIndex}</b>
+                </Typography>
+                <Typography sx={{ color: 'var(--text-primary)' }}>
+                    Seat: <b>{seat.col}</b>
+                </Typography>
+                <Typography sx={{ color: 'var(--text-primary)' }}>
+                    Status: <b>{seat.status}</b>
+                </Typography>
+                <Typography sx={{ color: 'var(--text-primary)' }}>
+                    Price: <b>{currency(priceForTier(seat.priceTier))}</b>
+                </Typography>
             </CardContent>
         </Card>
     );

@@ -9,7 +9,14 @@ export default function Page() {
   return (
     <>
       <TopBar title="Venue Selection" />
-      <Container maxWidth="lg" sx={{ py: 4 }}>
+      <Container 
+        maxWidth="lg" 
+        sx={{ 
+          py: 4,
+          backgroundColor: 'var(--background-primary)',
+          minHeight: 'calc(100vh - 64px)', // Account for TopBar height
+        }}
+      >
         <ArenaList />
       </Container>
     </>
