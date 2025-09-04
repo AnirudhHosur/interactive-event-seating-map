@@ -1,5 +1,7 @@
 html, body, #__next {
   height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 :root {
@@ -22,29 +24,40 @@ html, body, #__next {
 }
 
 [data-theme="dark"] {
-  /* Dark theme colors - WCAG 2.1 AA compliant */
-  --background-primary: #121212;
-  --background-secondary: #1e1e1e;
-  --background-tertiary: #2d2d2d;
+  /* Dark theme colors - Improved contrast for better readability */
+  --background-primary: #1a1a1a;
+  --background-secondary: #2a2a2a;
+  --background-tertiary: #3a3a3a;
   --text-primary: #ffffff;
-  --text-secondary: #e9ecef;
-  --text-tertiary: #adb5bd;
-  --accent-primary: #90caf9;
+  --text-secondary: #e0e0e0;
+  --text-tertiary: #b0b0b0;
+  --accent-primary: #64b5f6;
   --accent-secondary: #42a5f5;
-  --border-primary: #424242;
-  --border-secondary: #616161;
-  --focus-ring: 2px solid #90caf9;
-  --shadow: rgba(0, 0, 0, 0.3);
-  --success: #4caf50;
-  --warning: #ff9800;
-  --error: #f44336;
+  --border-primary: #404040;
+  --border-secondary: #505050;
+  --focus-ring: 2px solid #64b5f6;
+  --shadow: rgba(0, 0, 0, 0.4);
+  --success: #66bb6a;
+  --warning: #ffb74d;
+  --error: #ef5350;
 }
 
-/* Apply theme colors to body */
+/* Apply theme colors to html, body, and root elements */
+html {
+  background-color: var(--background-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
 body {
   background-color: var(--background-primary);
   color: var(--text-primary);
   transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#__next {
+  background-color: var(--background-primary);
+  min-height: 100vh;
 }
 
 /* Focus styles */

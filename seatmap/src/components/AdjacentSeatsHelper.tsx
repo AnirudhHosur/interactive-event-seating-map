@@ -90,12 +90,19 @@ export default function AdjacentSeatsHelper({ seats, neighbors }: Props) {
     return (
         <Box sx={{ 
             p: 2, 
-            bgcolor: 'background.paper', 
+            backgroundColor: 'var(--background-secondary)', 
             borderRadius: 1,
             border: '1px solid',
-            borderColor: 'divider'
+            borderColor: 'var(--border-primary)',
+            color: 'var(--text-primary)'
         }}>
-            <Typography variant="h6" sx={{ mb: 2, display: 'flex', alignItems: 'center', gap: 1 }}>
+            <Typography variant="h6" sx={{ 
+                mb: 2, 
+                display: 'flex', 
+                alignItems: 'center', 
+                gap: 1,
+                color: 'var(--text-primary)'
+            }}>
                 <SearchIcon />
                 Find Adjacent Seats
             </Typography>
@@ -108,13 +115,45 @@ export default function AdjacentSeatsHelper({ seats, neighbors }: Props) {
                     onChange={(e) => setSeatCount(Math.max(1, parseInt(e.target.value) || 1))}
                     inputProps={{ min: 1, max: 20 }}
                     size="small"
-                    sx={{ width: 150 }}
+                    sx={{ 
+                        width: 150,
+                        '& .MuiOutlinedInput-root': {
+                            backgroundColor: 'var(--background-primary)',
+                            color: 'var(--text-primary)',
+                            '& fieldset': {
+                                borderColor: 'var(--border-primary)',
+                            },
+                            '&:hover fieldset': {
+                                borderColor: 'var(--border-secondary)',
+                            },
+                            '&.Mui-focused fieldset': {
+                                borderColor: 'var(--accent-primary)',
+                            },
+                        },
+                        '& .MuiInputLabel-root': {
+                            color: 'var(--text-secondary)',
+                            '&.Mui-focused': {
+                                color: 'var(--accent-primary)',
+                            },
+                        },
+                    }}
                 />
                 <Button
                     variant="contained"
                     onClick={handleFindSeats}
                     disabled={isSearching}
                     startIcon={<SearchIcon />}
+                    sx={{
+                        backgroundColor: 'var(--accent-primary)',
+                        color: 'var(--background-primary)',
+                        '&:hover': {
+                            backgroundColor: 'var(--accent-secondary)',
+                        },
+                        '&:disabled': {
+                            backgroundColor: 'var(--background-tertiary)',
+                            color: 'var(--text-tertiary)',
+                        }
+                    }}
                 >
                     {isSearching ? "Searching..." : "Find Seats"}
                 </Button>
@@ -122,7 +161,18 @@ export default function AdjacentSeatsHelper({ seats, neighbors }: Props) {
 
             {/* Error Message */}
             {error && (
-                <Alert severity="error" sx={{ mb: 2 }} onClose={handleClearSearch}>
+                <Alert 
+                    severity="error" 
+                    sx={{ 
+                        mb: 2,
+                        backgroundColor: 'var(--error)',
+                        color: 'var(--background-primary)',
+                        '& .MuiAlert-icon': {
+                            color: 'var(--background-primary)',
+                        }
+                    }} 
+                    onClose={handleClearSearch}
+                >
                     {error}
                 </Alert>
             )}
@@ -131,15 +181,16 @@ export default function AdjacentSeatsHelper({ seats, neighbors }: Props) {
             {searchResult && (
                 <Box sx={{ 
                     p: 2, 
-                    bgcolor: 'success.light', 
+                    backgroundColor: 'var(--success)', 
                     borderRadius: 1,
                     border: '1px solid',
-                    borderColor: 'success.main'
+                    borderColor: 'var(--success)',
+                    color: 'var(--background-primary)'
                 }}>
-                    <Typography variant="subtitle2" sx={{ mb: 1, color: 'success.dark' }}>
+                    <Typography variant="subtitle2" sx={{ mb: 1, color: 'var(--background-primary)' }}>
                         Found {searchResult.length} adjacent seats!
                     </Typography>
-                    <Typography variant="body2" sx={{ mb: 2, color: 'success.dark' }}>
+                    <Typography variant="body2" sx={{ mb: 2, color: 'var(--background-primary)' }}>
                         Seat IDs: {searchResult.join(", ")}
                     </Typography>
                     <Box sx={{ display: 'flex', gap: 1 }}>
@@ -147,7 +198,13 @@ export default function AdjacentSeatsHelper({ seats, neighbors }: Props) {
                             variant="contained"
                             size="small"
                             onClick={handleSelectFoundSeats}
-                            sx={{ bgcolor: 'success.main' }}
+                            sx={{ 
+                                backgroundColor: 'var(--background-primary)',
+                                color: 'var(--success)',
+                                '&:hover': {
+                                    backgroundColor: 'var(--background-secondary)',
+                                }
+                            }}
                         >
                             Select These Seats
                         </Button>
@@ -155,7 +212,14 @@ export default function AdjacentSeatsHelper({ seats, neighbors }: Props) {
                             variant="outlined"
                             size="small"
                             onClick={handleClearSearch}
-                            sx={{ borderColor: 'success.main', color: 'success.main' }}
+                            sx={{ 
+                                borderColor: 'var(--background-primary)', 
+                                color: 'var(--background-primary)',
+                                '&:hover': {
+                                    backgroundColor: 'var(--background-primary)',
+                                    color: 'var(--success)',
+                                }
+                            }}
                         >
                             Clear
                         </Button>
@@ -163,7 +227,11 @@ export default function AdjacentSeatsHelper({ seats, neighbors }: Props) {
                 </Box>
             )}
 
-            <Typography variant="caption" sx={{ color: 'text.secondary', display: 'block', mt: 1 }}>
+            <Typography variant="caption" sx={{ 
+                color: 'var(--text-secondary)', 
+                display: 'block', 
+                mt: 1 
+            }}>
                 This helper will find {seatCount} adjacent available seats. It prioritizes horizontal groups, then vertical groups.
             </Typography>
         </Box>
